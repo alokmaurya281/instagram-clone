@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
+import 'package:instagram_clone/bottom_navigation_widget.dart';
+import 'package:instagram_clone/post_widget.dart';
+import 'package:instagram_clone/reel_widget.dart';
 import 'package:instagram_clone/story_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -47,107 +50,47 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            body: Column(
-              children: [
-                const Center(
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        StoryWidget(),
-                        StoryWidget(),
-                        StoryWidget(),
-                        StoryWidget(),
-                        StoryWidget(),
-                        StoryWidget(),
-                        StoryWidget(),
-                        StoryWidget(),
-                        StoryWidget(),
-                      ],
-                    ),
-                  ),
-                ),
-                const Divider(
-                  color: Color.fromARGB(133, 158, 158, 158),
-                ),
-                ListTile(
-                  contentPadding: const EdgeInsets.only(left: 8, right: 0),
-                  leading: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      border: const GradientBoxBorder(
-                        width: 2,
-                        gradient: LinearGradient(
-                          colors: [Colors.pink, Colors.orange],
-                        ),
-                      ),
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Container(
-                      margin: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: const Color.fromARGB(99, 29, 27, 27),
-                        ),
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: const CircleAvatar(
-                        backgroundImage:
-                            AssetImage('assets/images/profile.jpg'),
+            bottomNavigationBar: const BottomNavigationWidget(),
+            body: const SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Center(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          StoryWidget(),
+                          StoryWidget(),
+                          StoryWidget(),
+                          StoryWidget(),
+                          StoryWidget(),
+                          StoryWidget(),
+                          StoryWidget(),
+                          StoryWidget(),
+                          StoryWidget(),
+                        ],
                       ),
                     ),
                   ),
-                  title: const Text('username'),
-                  subtitle: const Text('song if any'),
-                  trailing: IconButton(
-                    alignment: Alignment.topRight,
-                    onPressed: () {},
-                    icon: const FaIcon(FontAwesomeIcons.ellipsisVertical),
+                  Divider(
+                    color: Color.fromARGB(133, 158, 158, 158),
                   ),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 400,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/images/profile.jpg'),
-                    ),
-                  ),
-                ),
-                ListTile(
-                  contentPadding: const EdgeInsets.only(left: 0, right: 0),
-                  leading: Wrap(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const FaIcon(FontAwesomeIcons.heart),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const FaIcon(FontAwesomeIcons.comment),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const FaIcon(FontAwesomeIcons.paperPlane),
-                      ),
-                    ],
-                  ),
-                  title: const Icon(FontAwesomeIcons.ellipsis),
-                  trailing: IconButton(
-                    onPressed: () {},
-                    icon: const FaIcon(FontAwesomeIcons.bookmark),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 16),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text("12 likes"),
-                  ),
-                ),
-              ],
+                  PostWidget(),
+                  PostWidget(),
+                  PostWidget(),
+                  PostWidget(),
+                  PostWidget(),
+                  PostWidget(),
+                  PostWidget(),
+                  PostWidget(),
+                  PostWidget(),
+                  PostWidget(),
+                  ReelWidget(),
+                  ReelWidget(),
+                  ReelWidget(),
+                ],
+              ),
             ),
           ),
           const Scaffold(
