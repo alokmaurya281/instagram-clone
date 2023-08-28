@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 
-class StoryWidget extends StatelessWidget {
-  const StoryWidget({super.key});
+class MessageWidgetUser extends StatelessWidget {
+  const MessageWidgetUser({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
+    return ListTile(
+      leading: Column(
         children: [
           Container(
-            width: 77,
-            height: 77,
+            width: 56,
+            height: 56,
             decoration: BoxDecoration(
               border: const GradientBoxBorder(
-                width: 3,
+                width: 2,
                 gradient: LinearGradient(
                   colors: [Colors.pink, Colors.orange],
                 ),
@@ -23,7 +22,7 @@ class StoryWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
             ),
             child: Container(
-              margin: const EdgeInsets.all(4),
+              margin: const EdgeInsets.all(2),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: const Color.fromARGB(99, 29, 27, 27),
@@ -35,8 +34,12 @@ class StoryWidget extends StatelessWidget {
               ),
             ),
           ),
-          const Text("Alok Maurya")
         ],
+      ),
+      title: Text('Anuj Maurya'),
+      subtitle: Text('recent message overview simple'),
+      trailing: GestureDetector(
+        child: Icon(Icons.camera_alt_outlined),
       ),
     );
   }

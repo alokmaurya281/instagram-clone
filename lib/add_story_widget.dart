@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 
-class StoryWidget extends StatelessWidget {
-  const StoryWidget({super.key});
+class AddStoryWidget extends StatelessWidget {
+  const AddStoryWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(left: 16, right: 8, bottom: 8, top: 8),
       child: Column(
         children: [
           Container(
@@ -31,11 +32,16 @@ class StoryWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
               ),
               child: const CircleAvatar(
-                backgroundImage: AssetImage('assets/images/profile.jpg'),
+                backgroundColor: Color.fromARGB(149, 175, 175, 175),
+                child: FaIcon(
+                  FontAwesomeIcons.circleUser,
+                  color: Color.fromARGB(149, 175, 175, 175),
+                  size: 62,
+                ),
               ),
             ),
           ),
-          const Text("Alok Maurya")
+          const Text("Your Story")
         ],
       ),
     );

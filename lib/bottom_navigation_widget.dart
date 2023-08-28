@@ -16,7 +16,7 @@ class BottomNavigationWidget extends StatelessWidget {
         backgroundColor: Colors.white,
         selectedItemColor: Colors.black,
         selectedIconTheme: const IconThemeData(size: 28),
-        unselectedIconTheme: const IconThemeData(size: 18),
+        unselectedIconTheme: const IconThemeData(size: 20),
         items: [
           const BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -28,8 +28,8 @@ class BottomNavigationWidget extends StatelessWidget {
           BottomNavigationBarItem(
               icon: SvgPicture.asset(
                 'assets/icons/reels.svg',
-                height: 18,
-                width: 18,
+                height: 20,
+                width: 20,
               ),
               label: ''),
           const BottomNavigationBarItem(
