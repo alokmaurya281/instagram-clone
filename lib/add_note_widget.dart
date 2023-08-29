@@ -25,7 +25,7 @@ class AddNoteWidget extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundImage: AssetImage('assets/images/profile.jpg'),
                   ),
                 ),
@@ -38,13 +38,13 @@ class AddNoteWidget extends StatelessWidget {
             top: 0,
             left: 0,
             child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(
                     Radius.circular(20),
                   ),
                   color: Color.fromARGB(255, 219, 218, 218)),
-              child: Text(
+              child: const Text(
                 "heelooo sir how are you??",
                 style: TextStyle(color: Colors.black, fontSize: 10),
               ),
@@ -56,7 +56,7 @@ class AddNoteWidget extends StatelessWidget {
             child: Container(
               width: 10,
               height: 10,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.green,
                 borderRadius: BorderRadius.all(
                   Radius.circular(50),

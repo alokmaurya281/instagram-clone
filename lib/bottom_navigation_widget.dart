@@ -26,10 +26,15 @@ class BottomNavigationWidget extends StatelessWidget {
           const BottomNavigationBarItem(
               icon: FaIcon(FontAwesomeIcons.squarePlus), label: ''),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/icons/reels.svg',
-                height: 20,
-                width: 20,
+              icon: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/reels');
+                },
+                child: SvgPicture.asset(
+                  'assets/icons/reels.svg',
+                  height: 20,
+                  width: 20,
+                ),
               ),
               label: ''),
           const BottomNavigationBarItem(

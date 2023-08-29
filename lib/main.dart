@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/home_screen.dart';
 import 'package:instagram_clone/login.dart';
 import 'package:instagram_clone/message_screen.dart';
+import 'package:instagram_clone/reels_screen.dart';
 import 'package:instagram_clone/splash_screen.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomeScreen(),
         '/messages': (context) => MessageScreen(),
+        '/reels': (context) => ReelsScreen(),
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

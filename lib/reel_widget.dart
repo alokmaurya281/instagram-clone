@@ -12,25 +12,26 @@ class ReelWidget extends StatefulWidget {
 }
 
 class _ReelWidgetState extends State<ReelWidget> {
-  late VideoPlayerController _videoPlayerController;
+  late VideoPlayerController videoPlayerController;
   @override
   void initState() {
     super.initState();
-    _videoPlayerController =
-        VideoPlayerController.asset('assets/videos/video.mp4')
-          ..initialize().then(
-            (_) {
-              setState(() {});
-              _videoPlayerController.play();
-              _videoPlayerController.setLooping(true);
-              _videoPlayerController.setVolume(0.0);
-            },
-          );
+    videoPlayerController = VideoPlayerController.networkUrl(
+      Uri.parse(
+          'https://assets.mixkit.co/videos/preview/mixkit-a-girl-blowing-a-bubble-gum-at-an-amusement-park-1226-large.mp4'),
+    )..initialize().then(
+        (_) {
+          setState(() {});
+          videoPlayerController.play();
+          videoPlayerController.setLooping(true);
+          videoPlayerController.setVolume(0.0);
+        },
+      );
   }
 
   @override
   void dispose() {
-    _videoPlayerController.dispose();
+    videoPlayerController.dispose();
     super.dispose();
   }
 
@@ -51,8 +52,8 @@ class _ReelWidgetState extends State<ReelWidget> {
                   child: SizedBox(
                     height: 650,
                     width: 400,
-                    child: _videoPlayerController.value.isInitialized
-                        ? VideoPlayer(_videoPlayerController)
+                    child: videoPlayerController.value.isInitialized
+                        ? VideoPlayer(videoPlayerController)
                         : const Center(
                             child: SizedBox(
                               width: 30,
@@ -114,18 +115,20 @@ class _ReelWidgetState extends State<ReelWidget> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 550,
-                  ),
-                  ListTile(
-                    trailing: GestureDetector(
-                      child: const Icon(
-                        Icons.volume_off_outlined,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
+                  // const SizedBox(
+                  //   height: 550,
+                  // ),
                 ],
+              ),
+              Positioned(
+                bottom: 16,
+                right: 16,
+                child: GestureDetector(
+                  child: const Icon(
+                    Icons.volume_off_outlined,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ],
           ),

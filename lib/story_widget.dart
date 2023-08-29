@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 
-class StoryWidget extends StatelessWidget {
+class StoryWidget extends StatefulWidget {
   const StoryWidget({super.key});
 
+  @override
+  State<StoryWidget> createState() => _StoryWidgetState();
+}
+
+class _StoryWidgetState extends State<StoryWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
