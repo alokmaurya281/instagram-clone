@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:instagram_clone/add_note_widget.dart';
-import 'package:instagram_clone/add_story_widget.dart';
 import 'package:instagram_clone/message_widget_user.dart';
 
 class MessageScreen extends StatefulWidget {

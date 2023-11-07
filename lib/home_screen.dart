@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:instagram_clone/add_screen.dart';
+import 'package:go_router/go_router.dart';
 import 'package:instagram_clone/add_story_widget.dart';
-import 'package:instagram_clone/widgets/bottom_navigation_widget.dart';
-import 'package:instagram_clone/message_screen.dart';
 import 'package:instagram_clone/post_widget.dart';
 import 'package:instagram_clone/reel_widget.dart';
+import 'package:instagram_clone/routes/router_constants.dart';
 import 'package:instagram_clone/story_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,18 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   void navigateToMessageScreen() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) {
-          return const MessageScreen();
-        },
-      ),
-    );
+    context.pushNamed(RouterConstants.chats);
   }
 
   @override
@@ -72,7 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomNavigationWidget(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
